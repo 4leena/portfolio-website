@@ -12,10 +12,10 @@
         <a href="#header" class="sticky-btn" >About</a>
         <a href="#What-I-do" class="sticky-btn" >What I do</a>
         <a href="#Work-timeline" class="sticky-btn" >Work</a>
-        <a  class="sticky-btn" >Volunteer-Work</a>
+        <!-- <a  class="sticky-btn" >Volunteer-Work</a>
         <a  class="sticky-btn" >Projects</a>
-        <a  class="sticky-btn" >Skills</a>
-        <a  class="sticky-btn" >Get in touch</a>
+        <a  class="sticky-btn" >Skills</a> -->
+        <a href="#get-in-touch" class="sticky-btn" >Get in touch</a>
     </div>
     </section>
 
@@ -119,11 +119,36 @@
      </div>
 
     </section>
+<section id="get-in-touch">
+  <div class="contact-container">
+    <h1>Get In Touch!</h1>
+    <p class="subtitle">Have a sweet project in mind or just want to say hi? I’d love to hear from you!</p>
 
-    <section id="Volunteer">
+    <form  action="https://formspree.io/f/mqadkaqk" method="POST"  id="contact-form">
+      <div class="input-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
 
+      <div class="input-group">
+        <label for="number">Phone Number</label>
+        <input type="tel" id="number" name="number" placeholder="Optional">
+      </div>
 
-    </section>
+      <div class="input-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
 </body>
 </html> 

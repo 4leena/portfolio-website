@@ -203,3 +203,85 @@ h1{
 .right-container img{
     left: -40px;
 }
+
+#get-in-touch {
+  background-image: linear-gradient(rgba(0,0,0,0.7), #262c45), url('imgs/contactform.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#get-in-touch h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+
+}
+#get-in-touch .subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+
+.contact-container {
+  background: transparent;
+  padding: 50px 40px;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+  color: #fff;
+}
+
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.input-group {
+  text-align: left;
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #12035b;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #070200;
+}
