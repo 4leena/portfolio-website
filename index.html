@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aleena Mukeer</title>
+  <title>Aleena Mukeer — Junior Software Engineer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -26,29 +26,71 @@
 
   <!-- HERO -->
   <section id="header">
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
     <div class="container header-inner">
       <div id="head-txt">
-        <h1 id="title">ALEENA MUKEER</h1>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 id="title">
+          <span class="title-line">ALEENA</span>
+          <span class="title-line title-accent">MUKEER</span>
+        </h1>
         <h2>Junior Software Engineer</h2>
         <p>
           I study Computer Science and Math and enjoy building thoughtful,
-          functional digital experiences. This space reflects what I’m learning
+          functional digital experiences. This space reflects what I'm learning
           and growing into.
         </p>
+        <div class="hero-actions">
+          <a href="#Work-timeline" class="btn btn-primary">View My Work</a>
+          <a href="#get-in-touch" class="btn btn-ghost">Get In Touch</a>
+        </div>
+        <div class="hero-stack">
+          <span class="stack-label">Stack</span>
+          <div class="stack-pills">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">TypeScript</span>
+            <span class="stack-pill">SQL</span>
+            <span class="stack-pill">Git</span>
+          </div>
+        </div>
       </div>
-      <img id="pfp" src="/imgs/pfp.jpg" alt="Aleena Mukeer portrait">
+
+      <div class="pfp-wrap">
+        <div class="pfp-ring pfp-ring-outer"></div>
+        <div class="pfp-ring pfp-ring-inner"></div>
+        <img id="pfp" src="/imgs/pfp.jpg" alt="Aleena Mukeer portrait">
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-fill"></div></div>
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <h1>Skills</h1>
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>Technical Skills</span>
+        </div>
+        <h1>What I <em>work with</em></h1>
+        <p class="section-sub">A collection of tools, technologies, and practices I use to build things that matter.</p>
+      </div>
 
       <div class="skills-grid">
 
-        <div class="skill-group">
-          <h3>Programming & Development</h3>
+        <div class="skill-group" data-index="1">
+          <div class="skill-group-icon">⌨️</div>
+          <h3>Programming &amp; Development</h3>
           <ul>
             <li>Python</li>
             <li>JavaScript (ES6+)</li>
@@ -60,18 +102,20 @@
           </ul>
         </div>
 
-        <div class="skill-group">
-          <h3>Web & Application Development</h3>
+        <div class="skill-group" data-index="2">
+          <div class="skill-group-icon">🌐</div>
+          <h3>Web &amp; Application Development</h3>
           <ul>
             <li>Full-stack web development</li>
             <li>RESTful APIs</li>
             <li>Responsive UI design</li>
-            <li>Authentication & authorization</li>
+            <li>Authentication &amp; authorization</li>
           </ul>
         </div>
 
-        <div class="skill-group">
-          <h3>Data & Analysis</h3>
+        <div class="skill-group" data-index="3">
+          <div class="skill-group-icon">📊</div>
+          <h3>Data &amp; Analysis</h3>
           <ul>
             <li>Data preprocessing</li>
             <li>Data cleaning</li>
@@ -80,18 +124,20 @@
           </ul>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group" data-index="4">
+          <div class="skill-group-icon">🛠️</div>
           <h3>Software Engineering Practices</h3>
           <ul>
-            <li>Git & version control</li>
+            <li>Git &amp; version control</li>
             <li>Debugging</li>
             <li>Reproducible workflows</li>
             <li>Documentation</li>
           </ul>
         </div>
 
-        <div class="skill-group">
-          <h3>Systems & Technical Operations</h3>
+        <div class="skill-group" data-index="5">
+          <div class="skill-group-icon">⚙️</div>
+          <h3>Systems &amp; Technical Operations</h3>
           <ul>
             <li>System reliability</li>
             <li>Troubleshooting</li>
@@ -100,8 +146,9 @@
           </ul>
         </div>
 
-        <div class="skill-group">
-          <h3>Ethics & Human-Centered Computing</h3>
+        <div class="skill-group" data-index="6">
+          <div class="skill-group-icon">🤝</div>
+          <h3>Ethics &amp; Human-Centered Computing</h3>
           <ul>
             <li>Ethics of computing</li>
             <li>Human–computer interaction</li>
@@ -117,88 +164,103 @@
   <!-- WORK EXPERIENCE -->
   <section id="Work-timeline">
     <div class="container">
-      <h1>Work Experience</h1>
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>Experience</span>
+        </div>
+        <h1>Where I've <em>shown up</em></h1>
+      </div>
 
       <div class="timeline">
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>Patient Simulation Technician</h2>
-            <h3>UNBC Northern Clinical Simulations</h3>
-            <p>
-              Prepared, configured, and managed simulation technology for nurse
-              training sessions, ensuring reliable operation and real-time
-              troubleshooting in high-stakes environments.
-            </p>
-            <small>Sept 2025 – Present</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>Patient Simulation Technician</h2>
+                <h3>UNBC Northern Clinical Simulations</h3>
+              </div>
+              <div class="timeline-date-wrap">
+                <small>Sept 2025 – Present</small>
+                <span class="date-badge">Current</span>
+              </div>
+            </div>
+            <p>Prepared, configured, and managed simulation technology for nurse training sessions, ensuring reliable operation and real-time troubleshooting in high-stakes environments.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>Student Assistant – Ethics of Computing</h2>
-            <h3>University of Northern British Columbia</h3>
-            <p>
-              Supported students and faculty by evaluating coursework,
-              providing structured feedback, and assisting with course
-              coordination in ethics-focused computing contexts.
-            </p>
-            <small>Sept 2025 – Dec 2025</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>Student Assistant – Ethics of Computing</h2>
+                <h3>University of Northern British Columbia</h3>
+              </div>
+              <small>Sept 2025 – Dec 2025</small>
+            </div>
+            <p>Supported students and faculty by evaluating coursework, providing structured feedback, and assisting with course coordination in ethics-focused computing contexts.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>Research Assistant – Northern STARS</h2>
-            <h3>University of Northern British Columbia</h3>
-            <p>
-              Contributed to data preprocessing, qualitative analysis pipelines,
-              and reproducible workflows for research on social robots in
-              educational environments.
-            </p>
-            <small>July 2025 – Present</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>Research Assistant – Northern STARS</h2>
+                <h3>University of Northern British Columbia</h3>
+              </div>
+              <div class="timeline-date-wrap">
+                <small>July 2025 – Present</small>
+                <span class="date-badge">Current</span>
+              </div>
+            </div>
+            <p>Contributed to data preprocessing, qualitative analysis pipelines, and reproducible workflows for research on social robots in educational environments.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>Student Assistant – Calculus II</h2>
-            <h3>University of Northern British Columbia</h3>
-            <p>
-              Evaluated coursework, clarified problem-solving steps, and
-              supported academic delivery for advanced calculus topics.
-            </p>
-            <small>Jan 2025 – Apr 2025</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>Student Assistant – Calculus II</h2>
+                <h3>University of Northern British Columbia</h3>
+              </div>
+              <small>Jan 2025 – Apr 2025</small>
+            </div>
+            <p>Evaluated coursework, clarified problem-solving steps, and supported academic delivery for advanced calculus topics.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>Cashier & Barista</h2>
-            <h3>Ristretto Coffee House</h3>
-            <p>
-              Delivered reliable service in a fast-paced environment while
-              managing concurrent tasks and maintaining quality under load.
-            </p>
-            <small>Aug 2023 – Sept 2025</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>Cashier &amp; Barista</h2>
+                <h3>Ristretto Coffee House</h3>
+              </div>
+              <small>Aug 2023 – Sept 2025</small>
+            </div>
+            <p>Delivered reliable service in a fast-paced environment while managing concurrent tasks and maintaining quality under load.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-card">
-            <h2>WordPress Intern</h2>
-            <h3>SheDev</h3>
-            <p>
-              Implemented custom WordPress features and enhancements,
-              contributing to production-ready client websites.
-            </p>
-            <small>May 2022 – Dec 2022</small>
+            <div class="timeline-card-header">
+              <div class="timeline-card-titles">
+                <h2>WordPress Intern</h2>
+                <h3>SheDev</h3>
+              </div>
+              <small>May 2022 – Dec 2022</small>
+            </div>
+            <p>Implemented custom WordPress features and enhancements, contributing to production-ready client websites.</p>
           </div>
         </div>
 
@@ -210,17 +272,132 @@
   <section id="get-in-touch">
     <div class="container">
       <div class="contact-container">
-        <h1>Get in Touch</h1>
+        <div class="section-header section-header--centered">
+          <div class="section-eyebrow section-eyebrow--center">
+            <span class="eyebrow-line"></span>
+            <span>Contact</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h1>Let's <em>connect</em></h1>
+          <p class="section-sub">Have a project, opportunity, or just want to say hi? I'd love to hear from you.</p>
+        </div>
 
         <form action="https://formspree.io/f/mqadkaqk" method="POST" id="contact-form">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-          <button type="submit">Send Message</button>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-arrow">→</span>
+          </button>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">AM</span>
+      <span class="footer-copy">© 2025 Aleena Mukeer · Prince George, BC</span>
+      <div class="footer-links">
+        <a href="#header">Top ↑</a>
+        <a href="#skills">Skills</a>
+        <a href="#Work-timeline">Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Sticky nav on scroll
+    const nav = document.getElementById('sticky-head');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const onScroll = () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    };
+    window.addEventListener('scroll', onScroll);
+
+    // ── Reveal timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const tlObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('revealed'), i * 100);
+          tlObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    timelineItems.forEach(el => tlObs.observe(el));
+
+    // ── Reveal & stagger skill cards
+    const skillCards = document.querySelectorAll('.skill-group');
+    const skObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const delay = (parseInt(e.target.dataset.index) - 1) * 80;
+          setTimeout(() => e.target.classList.add('revealed'), delay);
+          skObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    skillCards.forEach(el => skObs.observe(el));
+
+    // ── 3D tilt on skill cards
+    skillCards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `translateY(-8px) rotateX(${-y * 9}deg) rotateY(${x * 9}deg) scale(1.02)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    // ── Parallax orbs
+    document.addEventListener('mousemove', e => {
+      const cx = e.clientX / window.innerWidth - 0.5;
+      const cy = e.clientY / window.innerHeight - 0.5;
+      document.querySelectorAll('.orb').forEach((o, i) => {
+        const f = (i + 1) * 18;
+        o.style.transform = `translate(${cx * f}px, ${cy * f}px)`;
+      });
+    });
+
+    // ── Timeline dot pulse on hover
+    timelineItems.forEach(item => {
+      const dot = item.querySelector('.timeline-dot');
+      item.addEventListener('mouseenter', () => dot.classList.add('pulse'));
+      item.addEventListener('mouseleave', () => dot.classList.remove('pulse'));
+    });
+
+    // ── Form submit state
+    const form = document.getElementById('contact-form');
+    form?.addEventListener('submit', () => {
+      const btn = form.querySelector('button[type="submit"]');
+      btn.classList.add('loading');
+      btn.querySelector('.btn-text').textContent = 'Sending…';
+      btn.querySelector('.btn-arrow').textContent = '⟳';
+    });
+  </script>
 
 </body>
 </html>
