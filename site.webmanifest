@@ -1,0 +1,14 @@
+{
+  "name": "Aleena Mukeer",
+  "short_name": "Aleena",
+  "description": "Computer Science & Mathematics student at UNBC. Robot games, clinical simulation and web apps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#23101c",
+  "theme_color": "#2a1422",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

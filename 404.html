@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Aleena Mukeer</title>
+<meta name="description" content="This page doesn't exist. Head back to Aleena Mukeer's portfolio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2a1422">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fs-xs: .8353rem; --fs-base: 1.0625rem; --fs-md: 1.3515rem; --fs-lg: 1.7191rem; --fs-3xl: 3.5378rem; --fs-4xl: 4.5006rem;
+    --ink: #f8e9ef; --ink-soft: #d9bac7; --hand: #f3a9c5; --rose: #d97a9b;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; overflow-x: hidden; }
+  body {
+    min-height: 100vh; min-height: 100svh;
+    display: grid; place-items: center;
+    padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+    font-family: "Albert Sans", "Helvetica Neue", Arial, sans-serif; font-size: var(--fs-base); line-height: 1.618;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 30%, rgba(214, 120, 160, .22), transparent 70%),
+      linear-gradient(to bottom, #2e1626, #23101c 55%, #190a14);
+    -webkit-font-smoothing: antialiased;
+  }
+  main { width: 100%; max-width: 880px; display: grid; gap: clamp(20px, 5vw, 56px); align-items: center; }
+  @media (min-width: 720px) { main { grid-template-columns: 1fr 1.15fr; } }
+  .pic { position: relative; justify-self: center; width: min(300px, 70vw); aspect-ratio: 924 / 1152; }
+  .pic::before { content: ""; position: absolute; inset: 12% 8% 0; border-radius: 50%; background: radial-gradient(circle, rgba(243, 169, 197, .35), transparent 65%); filter: blur(10px); }
+  .pic img { position: relative; width: 100%; height: 100%; object-fit: contain; animation: bob 4s ease-in-out infinite; }
+  @keyframes bob { 50% { translate: 0 -8px; } }
+  .code { margin: 0; font-family: "Caveat", cursive; font-size: var(--fs-md); color: var(--hand); rotate: -2deg; }
+  h1 { margin: 4px 0 0; font-family: "Bodoni Moda", Georgia, serif; font-weight: 800; font-size: clamp(var(--fs-lg), 7vw, var(--fs-3xl)); line-height: 1.05; letter-spacing: -.01em; }
+  p.lead { margin: 16px 0 0; color: var(--ink-soft); max-width: 30em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 20px; border-radius: 12px;
+    font: inherit; font-weight: 600; text-decoration: none; transition: background-color .25s, color .25s, transform .15s;
+  }
+  .btn.primary { background: #f8e9ef; color: #3b1d29; }
+  .btn.primary:hover { background: var(--rose); color: #fff; }
+  .btn.ghost { color: var(--ink); border: 1px solid rgba(243, 169, 197, .35); }
+  .btn.ghost:hover { background: rgba(243, 169, 197, .12); }
+  .btn:active { transform: scale(.98); }
+  .btn:focus-visible { outline: 2px solid var(--hand); outline-offset: 3px; }
+  nav { margin-top: 28px; font-size: var(--fs-xs); color: var(--ink-soft); }
+  nav a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: rgba(243, 169, 197, .5); margin-right: 14px; display: inline-block; padding: 6px 0; }
+  nav a:hover { color: var(--hand); }
+  @media (max-width: 719px) { main { text-align: center; } .actions { justify-content: center; } p.lead { margin-inline: auto; } }
+  @media (prefers-reduced-motion: reduce) { .pic img { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="pic"><img src="/assets/character/wave.webp" alt="Aleena's illustrated character, waving" width="924" height="1152"></div>
+  <div>
+    <p class="code">404, page not found</p>
+    <h1>This page wandered off.</h1>
+    <p class="lead">The link might be old, or there may be a typo in the address. Everything on my site lives on the home page.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">Back to the home page</a>
+      <a class="btn ghost" href="/#contact">Get in touch</a>
+    </div>
+    <nav aria-label="Sections">
+      <a href="/#timeline">Work timeline</a><a href="/#projects">Projects</a><a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>
