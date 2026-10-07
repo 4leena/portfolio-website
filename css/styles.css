@@ -538,6 +538,7 @@ body { background: var(--fibres), var(--paper-grain), var(--page); }
 #timeline { --tape: rgba(240, 190, 120, .75); }
 #projects { --tape: rgba(150, 196, 178, .78); }
 #recommendations { --tape: rgba(222, 142, 170, .72); }
+#news { --tape: rgba(201, 166, 216, .75); }
 
 
 /* tags look like little paper luggage labels */
@@ -1023,6 +1024,17 @@ body { background: var(--fibres), var(--paper-grain), var(--page); }
   .pcard.feature { flex-direction: column; }
   .pcard.feature .pc-media { flex: none; aspect-ratio: 16 / 9; min-height: 0; }
 }
+
+/* In the news: video features get a play button over the thumbnail */
+.pc-play {
+  position: absolute; z-index: 2; left: 50%; top: 50%; translate: -50% -50%; display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--c2);
+  box-shadow: 0 10px 24px -8px rgba(40, 10, 30, .55);
+  transition: scale .4s cubic-bezier(.2, .8, .2, 1), background-color .3s ease, color .3s ease;
+}
+.pc-play svg { width: 26px; height: 26px; margin-left: 4px; fill: currentColor; }
+.pcard:hover .pc-play, .pcard:focus-within .pc-play { scale: 1.12; background: var(--c2); color: #fff; }
+@media (prefers-reduced-motion: reduce) { .pc-play { transition: none; } }
 
 /* game chips are buttons that open the gallery */
 .game-chip {

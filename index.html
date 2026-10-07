@@ -63,6 +63,7 @@
       <li><a href="#top"><span class="m-dot" style="--c:#d97a9b"></span>Home</a></li>
       <li><a href="#timeline"><span class="m-dot" style="--c:#e0a25a"></span>Work timeline</a></li>
       <li><a href="#projects"><span class="m-dot" style="--c:#5aa08c"></span>Projects</a></li>
+      <li><a href="#news"><span class="m-dot" style="--c:#80599a"></span>In the news</a></li>
       <li data-needs="recommendations"><a href="#recommendations"><span class="m-dot" style="--c:#c0567f"></span>Recommendations</a></li>
       <li><a href="#contact"><span class="m-dot" style="--c:#8a7ae0"></span>Get in touch</a></li>
     </ul>
@@ -413,6 +414,7 @@
           <p class="pc-games-label">the five games (tap one to see it)</p>
           <ul class="pc-games"><li><button class="game-chip" type="button" data-game="memory-matrix" aria-haspopup="dialog">Memory Matrix</button></li><li><button class="game-chip" type="button" data-game="scrambled-words" aria-haspopup="dialog">Scrambled Words</button></li><li><button class="game-chip" type="button" data-game="tangram-time" aria-haspopup="dialog">Tangram Time</button></li><li><button class="game-chip" type="button" data-game="match-point" aria-haspopup="dialog">Match Point</button></li><li><button class="game-chip" type="button" data-game="misty-maze" aria-haspopup="dialog">Misty Maze</button></li></ul>
           <ul class="tags"><li>Reachy Mini</li><li>Python</li><li>ArUco</li><li>MediaPipe</li><li>Raspberry Pi 5</li><li>Local LLM</li></ul>
+          <a class="pc-link" href="#news">Featured on CKPG Today<svg class="pc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
       <article class="pcard contact reveal" data-href="https://study-buddy-unbc.netlify.app/calendar">
@@ -447,6 +449,34 @@
           <h3>Cybersecurity Awareness Game</h3>
           <p class="pc-desc">An interactive simulation of phishing, weak passwords and social engineering. Decision-based scenarios let you feel the attack before it happens.</p>
           <ul class="tags"><li>JavaScript</li><li>Security</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== IN THE NEWS -->
+<section class="block" id="news" aria-labelledby="news-title">
+  <div class="inner">
+    <div class="section-head reveal">
+      <span class="tile lilac" aria-hidden="true"><svg viewBox="0 0 32 32"> <rect class="fl" x="4" y="8" width="24" height="17" rx="3"/> <rect class="ln" x="4" y="8" width="24" height="17" rx="3"/> <path class="ln" d="M11.5 4l4.5 4 4.5-4M11 28h10"/> <g class="ac"><path class="wh" d="M13.5 12.6v7.8l6.6-3.9z"/></g> </svg></span>
+      <div>
+        <h2 id="news-title">In the news</h2>
+        <p>Places my work has shown up.</p>
+      </div>
+    </div>
+    <div class="pgrid">
+      <article class="pcard feature news lilac reveal" data-href="https://www.youtube.com/watch?v=OYCFVhrDmuc&amp;t=371s">
+        <div class="pc-media" data-src="assets/featured/ckpg-spark-lab.jpg">
+          <svg class="pc-art" viewBox="0 0 320 180" aria-hidden="true"><rect x="92" y="40" width="136" height="96" rx="14" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><path d="M138 22l22 18 22-18M130 152h60" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="pc-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        </div>
+        <div class="pc-body">
+          <p class="pc-when">October 5, 2026</p>
+          <h3>CKPG Today: inside UNBC's Spark Lab</h3>
+          <p class="pc-desc">CKPG's Campus Connections toured UNBC's Spark Lab, and we demoed Memory Matrix, one of the robot games we built for summer camp. I talked about the research behind it: about 200 kids played our games at camp, and we're studying the game logs and videos to improve how children and robots interact, so systems like this can one day work in classrooms.</p>
+          <ul class="tags"><li>CKPG Today</li><li>Video</li><li>Robot Camp Games</li></ul>
+          <a class="pc-link" href="https://www.youtube.com/watch?v=OYCFVhrDmuc&amp;t=371s" target="_blank" rel="noopener">Watch our segment (6:11)<svg class="pc-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="visually-hidden"> (CKPG video on YouTube, opens in a new tab)</span></a>
         </div>
       </article>
     </div>
@@ -783,8 +813,8 @@
 
 <!-- Game gallery for the Robot Camp Games project -->
 <template id="game-memory-matrix" data-title="Memory Matrix">
-  <!-- TODO: edit the description, and add photos as assets/games/memory-matrix-1.jpg, -2.jpg, -3.jpg (the gallery shows whichever exist) -->
-  <p class="g-text">[Add a short description of Memory Matrix: what the kids do, and how the robot plays along.]</p>
+  <!-- TODO: add photos as assets/games/memory-matrix-1.jpg, -2.jpg, -3.jpg (the gallery shows whichever exist) -->
+  <p class="g-text">A two-player memory game, a bit like Simon. Each kid scans a name card and the robot greets them by the player name they picked. Then nine buttons light up in a sequence, and players take turns repeating it, 20 seconds each, for up to 12 rounds while the chain keeps growing.</p>
   <figure data-src="assets/games/memory-matrix-1.jpg"><figcaption>[Caption for photo 1]</figcaption></figure>
   <figure data-src="assets/games/memory-matrix-2.jpg"><figcaption>[Caption for photo 2]</figcaption></figure>
   <figure data-src="assets/games/memory-matrix-3.jpg"><figcaption>[Caption for photo 3]</figcaption></figure>
