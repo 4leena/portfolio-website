@@ -572,3 +572,52 @@ document.addEventListener('click', (e) => {
   new ResizeObserver(resize).observe(section);
   reduce.addEventListener('change', start);
 })();
+
+// Her phone always shows one notification: the first appears a few seconds after the page loads
+// (after her wave), then every minute it swaps to the next one in <template id="phone-notifs">.
+// Tapping one opens its section. No swaps while the phone is off screen or the tab is hidden;
+// a missed one happens on return.
+(function () {
+  const tpl = document.getElementById('phone-notifs');
+  const slot = document.querySelector('.notif-slot');
+  const phone = document.querySelector('.phone');
+  if (!tpl || !slot || !phone) return;
+  const items = [...tpl.content.querySelectorAll('.notif')];
+  if (!items.length) return;
+  const FIRST = 5000, EVERY = 60000;
+  let i = 0, visible = false, due = false;
+
+  // "today", "yesterday", "3d ago", then the date itself once it's over a week old
+  const ago = (iso) => {
+    const [y, m, d] = iso.split('-').map(Number);
+    const then = new Date(y, m - 1, d), now = new Date();
+    const days = Math.round((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - then) / 864e5);
+    if (days <= 0) return 'today';
+    if (days === 1) return 'yesterday';
+    if (days < 7) return days + 'd ago';
+    return then.toLocaleDateString([], { month: 'short', day: 'numeric', ...(y !== now.getFullYear() && { year: 'numeric' }) });
+  };
+  const hide = (el) => {
+    el.classList.remove('in');
+    setTimeout(() => el.remove(), 600);
+  };
+  const show = () => {
+    due = false;
+    slot.querySelectorAll('.notif').forEach(hide);
+    const el = items[i].cloneNode(true);
+    i = (i + 1) % items.length;
+    el.querySelectorAll('.n-when[data-date]').forEach(w => { w.textContent = ago(w.dataset.date); });
+    slot.appendChild(el);
+    el.getBoundingClientRect();   // start from the hidden position so it rises in
+    el.classList.add('in');
+    if (items.length > 1) setTimeout(next, EVERY);
+  };
+  const next = () => { if (visible && !document.hidden) show(); else due = true; };
+
+  new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting;
+    if (visible && due) show();
+  }, { threshold: .4 }).observe(phone);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && visible && due) show(); });
+  setTimeout(next, FIRST);
+})();

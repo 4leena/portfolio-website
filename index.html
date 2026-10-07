@@ -95,6 +95,7 @@
             <p class="lock-date"></p>
             <p class="lock-time"></p>
           </div>
+          <div class="notif-slot"></div>
       <div class="stage">
         <button class="figure" type="button" aria-label="Aleena, illustrated. She turns to follow your cursor. Press to say hi.">
           <span class="body"><span class="breath">
@@ -841,6 +842,25 @@
     <!-- Reference: put the person's LinkedIn or email in href (mailto:name@example.com), and their name in the link text. Until href is filled in, it shows as plain text. -->
     <p class="pg-ref-line">reference: <a class="pg-ref" href="" target="_blank" rel="noopener">[Name, how to reach them]</a></p>
   </article>
+</template>
+
+<!-- Notifications on her phone: one pops up a few seconds after the page loads, then a new one every minute.
+     Each <a> is one notification. Set href to the section it opens, the app's colour with class (lilac, cafe, proj, work, recs, contact),
+     and the app name, title and text. Put the real date it happened in data-date (YYYY-MM-DD): it shows as "2d ago",
+     or as the date once it's more than a week old. Leave data-date out for things with no single date. Newest first. -->
+<template id="phone-notifs">
+  <a class="notif lilac" href="#news">
+    <span class="n-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="17" rx="3"/><path d="M11.5 4l4.5 4 4.5-4M11 28h10"/><path class="f" d="M13.5 12.6v7.8l6.6-3.9z"/></svg></span>
+    <span class="n-body"><span class="n-app">CKPG Today<span class="n-when" data-date="2026-10-05"></span></span><strong>Aleena got featured on CKPG news</strong><span class="n-text">Watch her demo the robot camp games at UNBC's Spark Lab.</span></span>
+  </a>
+  <a class="notif cafe" href="#hackathons">
+    <span class="n-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="14" rx="2.5"/><path d="M2.5 25h27"/><path class="f" d="M17.2 9.5l-4.6 6h3.6l-1.4 4.2 4.6-6h-3.6z"/></svg></span>
+    <span class="n-body"><span class="n-app">DEV<span class="n-when" data-date="2026-10-04"></span></span><strong>Aleena submitted NOTE-IT to the weekend hackathon</strong><span class="n-text">A study tool built for a friend who couldn't read her own notes.</span></span>
+  </a>
+  <a class="notif work" href="#projects">
+    <span class="n-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 11.5h24M12.5 15.5L9.8 18.5l2.7 3M19.5 15.5l2.7 3-2.7 3"/></svg></span>
+    <span class="n-body"><span class="n-app">Projects</span><strong>About 200 kids played Aleena's robot games</strong><span class="n-text">Five games with a Reachy Mini robot at summer camp.</span></span>
+  </a>
 </template>
 
 <!-- Game gallery for the Robot Camp Games project -->
