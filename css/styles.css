@@ -538,6 +538,7 @@ body { background: var(--fibres), var(--paper-grain), var(--page); }
 #timeline { --tape: rgba(240, 190, 120, .75); }
 #projects { --tape: rgba(150, 196, 178, .78); }
 #recommendations { --tape: rgba(222, 142, 170, .72); }
+#hackathons { --tape: rgba(220, 184, 146, .78); }
 #news { --tape: rgba(201, 166, 216, .75); }
 
 
@@ -1024,6 +1025,12 @@ body { background: var(--fibres), var(--paper-grain), var(--page); }
   .pcard.feature { flex-direction: column; }
   .pcard.feature .pc-media { flex: none; aspect-ratio: 16 / 9; min-height: 0; }
 }
+
+/* more than one link on a card */
+.pc-links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 18px; }
+.pc-links .pc-link { margin-top: 0; }
+/* screenshots whose important part is top-left (app UIs) */
+.pc-media.pin-left img { object-position: left top; }
 
 /* In the news: video features get a play button over the thumbnail */
 .pc-play {
@@ -1539,3 +1546,21 @@ html, body { overflow-x: hidden; }
   .hint-arrow { rotate: 0deg; }
 }
 .gt-li-email { grid-column: 1 / -1; }
+
+/* =====================================================================
+   Hackathons: a dark band with letters raining behind it
+   ===================================================================== */
+.block.hack-rain {
+  overflow: hidden; padding-bottom: clamp(70px, 10vh, 110px);
+  background: linear-gradient(var(--page), #070607 110px, #070607 calc(100% - 110px), var(--page));
+}
+.hack-rain .rain {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+  -webkit-mask: linear-gradient(transparent, #000 110px, #000 calc(100% - 110px), transparent);
+          mask: linear-gradient(transparent, #000 110px, #000 calc(100% - 110px), transparent);
+}
+.hack-rain .inner { position: relative; z-index: 1; }
+.hack-rain .mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-weight: 700; letter-spacing: .02em;
+  font-size: .78em; color: #f4f1ee;
+}

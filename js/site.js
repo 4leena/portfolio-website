@@ -513,3 +513,62 @@ document.addEventListener('click', (e) => {
   window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   history.replaceState(null, '', location.pathname + location.search);
 });
+
+// Hackathons: letters rain down behind the section, a few flickering green at a time.
+// Runs only while the section is on screen; with reduced motion it draws one still frame.
+(function () {
+  const section = document.querySelector('.hack-rain');
+  if (!section) return;
+  const canvas = section.querySelector('.rain');
+  const ctx = canvas.getContext('2d');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+  const pick = (s) => s[Math.floor(Math.random() * s.length)];
+  let drops = [], active = new Set(), w = 0, h = 0, size = 22, visible = false, raf = 0, lastFlicker = 0;
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = section.offsetWidth; h = section.offsetHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    size = w < 620 ? 16 : 22;
+    const count = Math.min(380, Math.round(w * h / 4200));
+    drops = Array.from({ length: count }, () => ({
+      ch: pick(CHARS), x: Math.random() * w, y: Math.random() * h, v: h * (0.0008 + Math.random() * 0.0024)
+    }));
+    draw();
+  };
+
+  const draw = () => {
+    ctx.clearRect(0, 0, w, h);
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = `300 ${size}px ui-monospace, Menlo, Consolas, monospace`;
+    ctx.fillStyle = 'rgba(100, 116, 139, .4)'; ctx.shadowBlur = 0;
+    drops.forEach((d, i) => { if (!active.has(i)) ctx.fillText(d.ch, d.x, d.y); });
+    ctx.font = `700 ${Math.round(size * 1.25)}px ui-monospace, Menlo, Consolas, monospace`;
+    ctx.fillStyle = '#39ff6a'; ctx.shadowColor = 'rgba(255, 255, 255, .8)'; ctx.shadowBlur = 10;
+    active.forEach(i => { const d = drops[i]; if (d) ctx.fillText(d.ch, d.x, d.y); });
+  };
+
+  const tick = (t) => {
+    drops.forEach(d => {
+      d.y += d.v;
+      if (d.y > h + size) { d.y = -size; d.x = Math.random() * w; d.ch = pick(CHARS); }
+    });
+    if (t - lastFlicker > 50) {
+      lastFlicker = t; active = new Set();
+      const n = 3 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < n; i++) active.add(Math.floor(Math.random() * drops.length));
+    }
+    draw();
+    raf = visible && !reduce.matches ? requestAnimationFrame(tick) : 0;
+  };
+  const start = () => { if (!raf && visible && !reduce.matches) raf = requestAnimationFrame(tick); };
+
+  new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting;
+    if (visible) start();
+  }).observe(section);
+  new ResizeObserver(resize).observe(section);
+  reduce.addEventListener('change', start);
+})();
