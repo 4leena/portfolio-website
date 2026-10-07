@@ -46,3 +46,7 @@ Everything is in `index.html`, and each part has a comment explaining how to cha
 - **Photos:** drop them into the matching `assets/` folder with the name its `README.txt` gives. Each one shows up automatically, and anything missing is skipped.
 - **Phone notifications:** in `<template id="phone-notifs">`, one `<a class="notif">` per notification. Set `data-date="YYYY-MM-DD"` to the day it happened: it shows as "2d ago", or as the date after a week.
 - **Hackathons and news:** add another `<article class="pcard">` to the `#hackathons` or `#news` section.
+
+## Deploying
+
+Netlify deploys the site automatically whenever `main` is pushed.
